@@ -1,0 +1,31 @@
+DECLARE str1 : STRING
+DECLARE str2 : STRING
+DECLARE char1 : CHARACTER
+DECLARE char2 : CHARACTER
+DECLARE counter : INTEGER
+
+str1 = ""
+str2 = ""
+char1 = ""
+char2 = ""
+nextchar = ""
+counter = 0
+
+output "Enter string: "
+INPUT str1
+
+output "Enter string to replace: "
+INPUT char1
+
+output "Enter string to replace with: "
+INPUT char2
+
+For counter = 1 to length(str1)
+    nextchar = MID(str1, counter, 1)
+    if nextchar = char1
+      then 
+        nextchar = char2
+    endif
+    str2 = str2 & nextchar
+endfor
+output "final string is = " & str2
