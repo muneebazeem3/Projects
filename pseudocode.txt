@@ -1,31 +1,27 @@
-DECLARE str1 : STRING
-DECLARE str2 : STRING
-DECLARE char1 : CHARACTER
-DECLARE char2 : CHARACTER
-DECLARE counter : INTEGER
+declare str1 : string
+declare str2 : string
+declare nextchar : character
+declare counter : interger
+declare char1 : character
 
 str1 = ""
 str2 = ""
-char1 = ""
-char2 = ""
-nextchar = ""
+nextchar = ''
+char1 = ''
 counter = 0
 
 output "Enter string: "
-INPUT str1
+input str1
 
-output "Enter string to replace: "
-INPUT char1
+output "Eter charachter to remove: "
+input char1
 
-output "Enter string to replace with: "
-INPUT char2
-
-For counter = 1 to length(str1)
-    nextchar = MID(str1, counter, 1)
-    if nextchar = char1
+for counter 1 to length(str1)
+    nextchar = MID(str1,counter,1)
+    if nextchar <> char1
       then 
-        nextchar = char2
+       str2= str2 & nextchar
     endif
-    str2 = str2 & nextchar
 endfor
-output "final string is = " & str2
+
+output "final string is: " str2
