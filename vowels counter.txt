@@ -1,0 +1,25 @@
+declare nextchar : string
+declare str1 : string
+declare counter : integer
+declare vowels : string
+declare no.ofvowels : integer
+
+str1=""
+vowels="AEIOUaeiuo"
+no.ofvowels= 0
+counter=0
+
+output"enter sentence: "
+input str1
+str1=lcase(str1)
+
+for 1 to length(str1)
+nextchar=mid(str1,A,1)
+n=locate(vowels,nextchar)
+if n>0 then
+no.ofvowels= no.ofvowels + 1
+endif
+
+next
+
+output no.ofvowels
