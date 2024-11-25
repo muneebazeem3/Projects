@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - apt-get update
+      - apt-get install -y nginx
+  build:
+    commands:
+      - echo "Updating package lists and installing Nginx..."
+      - mkdir -p /var/www/html
+      - cp -R * /var/www/html/
+  post_build:
+    commands:
+      - echo "Starting Nginx to serve the static site..."
+#      - systemctl start nginx
+      - echo "Nginx is now serving your static site on port 80"
+artifacts:
+  files:
+    - index.html
+    - style.css
